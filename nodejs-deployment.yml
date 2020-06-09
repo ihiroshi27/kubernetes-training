@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nodejs
+  template:
+    metadata:
+      name: nodejs
+      labels:
+        app: nodejs
+    spec:
+      containers:
+      - name: nodejs
+        image: harbor.digio.co.th/kubernetes/kubernetes-nodejs:0.0.1
+        ports:
+        - containerPort: 8370
