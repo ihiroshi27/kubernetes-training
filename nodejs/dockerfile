@@ -1,5 +1,7 @@
 FROM node:12.18.0-alpine3.11
 
+LABEL maintainer="Perayuth Thanyanon"
+
 WORKDIR /usr/src/app
 
 COPY package*.json ./
